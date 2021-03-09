@@ -1,0 +1,10 @@
+{
+    "include": ["./src/**/*"],//"include" 是指定哪些ts文件需要进行编译
+    "compilerOptions": {
+        "target": "ES2015",//指定ts被编译的es版本
+        "module": "ES2015",  //// module 指定要使用的模块化规范
+        "strict": true,  //是否使用严格模式
+        "outDir": "./js",//ts编译后输出的js文件夹
+        "noEmitOnError":true  // noEmitOnError  当有错误时不生成编译后的文件
+    }
+}

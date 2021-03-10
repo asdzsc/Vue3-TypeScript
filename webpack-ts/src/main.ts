@@ -1,14 +1,4 @@
-// import './01-基础类型'
-// import './02-接口'
-// import './03-函数'
-// import './04-类类型'
-// import './01-类'
-// import './02-继承'
-// import './03-多肽'
-// import './04-修饰符'
-// import './05-readonly'
-// import './06-存取器'
-import './07-静态成员'
+import './05-泛型/01-泛型'
 document.write("hello")
 let btn = document.querySelector("button") as HTMLButtonElement
 

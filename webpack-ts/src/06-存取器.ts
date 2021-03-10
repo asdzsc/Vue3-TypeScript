@@ -11,6 +11,7 @@
         // 姓名的成员属性(外部可以访问也可以修改)
         // 读取器----负责读取数据的
         get FullName() {
+            // 姓名---->姓氏和名字的拼接
             console.log("get中。。。");
             return this.firstName + '-' + this.lastName
         }

@@ -7,7 +7,8 @@
 // import './03-多肽'
 // import './04-修饰符'
 // import './05-readonly'
-import './06-存取器'
+// import './06-存取器'
+import './07-静态成员'
 document.write("hello")
 let btn = document.querySelector("button") as HTMLButtonElement
 

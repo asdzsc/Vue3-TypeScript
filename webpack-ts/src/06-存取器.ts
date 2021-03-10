@@ -17,7 +17,7 @@
         // 设置器----负责设置数据的(修改)
         set FullName(val: string) {
             console.log("set中。。。");
-            // 姓名----》把姓氏和名字获取到重新的赋值给 firstName 和 lastName
+            // 姓名---->把姓氏和名字获取到重新的赋值给 firstName 和 lastName
             let names = val.split("-")
             console.log(names);
             this.firstName = names[0]

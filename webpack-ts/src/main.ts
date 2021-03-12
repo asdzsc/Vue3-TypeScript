@@ -1,4 +1,4 @@
-import './05-泛型/05-泛型约束'
+import './02-内置对象'
 document.write("hello")
 let btn = document.querySelector("button") as HTMLButtonElement
 

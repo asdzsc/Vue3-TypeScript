@@ -12,7 +12,6 @@
 </template>
 
 <script lang="ts">
-
 import { defineComponent, reactive } from "vue";
 export default defineComponent({
   name: "App",
@@ -59,7 +58,6 @@ export default defineComponent({
       // delete obj.age; //操作目标对象这种方式 界面没有更新渲染 obj对象和user对象也都删除了age这个属性
       delete user.age; //操作代理对象这种方式 界面更新渲染 obj对象和user对象也都删除了age这个属性
       // 总结：如果操作代理对象 目标对象随之改变 但是不会渲染页面 所以想要同时操作数据又更新页面 就要操作代理对象
-
 
       // 通过代理对象找到目标对象中的某个属性，更改该属性的某个数组的数据
       user.wife[0].age = 17;

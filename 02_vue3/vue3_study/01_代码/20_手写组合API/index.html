@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script src="./index.js"></script>
+<script>
+    // 浅监视
+    let proxyUser = shallowReactive({
+            name: "Tom",
+            wife: {
+                name: "大甜甜",
+                age: 17
+            }
+        })
+        // 拦截到了数据的读取
+        // console.log(proxyUser.name);
+        // 拦截到了数据的读取   拦截到了数据的修改
+        // proxyUser.name += '=='
+        // 拦截到了数据的添加 拦截到了数据的读取
+        // proxyUser.age += '18'
+        // 拦截到了数据的读取 但是没有数据的修改
+        // proxyUser.wife.age += '18'
+        // 拦截到了数据的删除
+        // delete proxyUser.name
+        // 拦截到了数据的读取
+        // delete proxyUser.wife.name
+        // 深监视
+    let proxyUser2 = reactive({
+            name: "Tom",
+            wife: {
+                name: "大甜甜",
+                age: 17
+            }
+        })
+        // 拦截到了数据的读取
+        // proxyUser2.name
+        // 拦截到了数据的读取   拦截到了数据的修改
+        // proxyUser2.name = '=='
+        // 拦截到了数据的添加 拦截到了数据的读取
+        // proxyUser2.age += '18'
+        // 拦截到了数据的读取 拦截到了数据的修改
+        // proxyUser2.wife.age += '18'
+        // 拦截到了数据的删除
+        // delete proxyUser2.name
+        // 拦截到了数据的读取 拦截到了数据的删除
+        // delete proxyUser2.wife.name
+
+
+    // 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
+    // 测试 shallowReadonly 和 readonly
+    let proxyUser3 = shallowReadonly({
+            name: "Tom",
+            wife: ['大甜甜', '小甜甜']
+        })
+        // 拦截到了读取对象
+        // proxyUser3.name
+        // console.log(proxyUser3.name);
+        // 拦截到了只读数据 不可添加修改
+        // proxyUser3.name = '===='
+        // console.log(proxyUser3.name = "===");
+        // 拦截到了读取 不能删除
+        // delete proxyUser3.name
+        // console.log(delete proxyUser3.name);
+        // 拦截到了读取 可以添加 修改
+        // console.log(proxyUser3.wife[0]);
+        // proxyUser3.wife.push("小姐姐")
+        // proxyUser3.wife[0] = '大姐姐'
+        // 拦截到了读取 可以删除
+        // delete proxyUser3.wife[0]
+        // console.log(delete proxyUser3.wife[0]);
+
+    let proxyUser4 = readonly({
+            name: "Tom",
+            wife: ['大甜甜', '小甜甜']
+        })
+        // 拦截到了读取对象
+        // proxyUser4.name
+        // console.log(proxyUser4.name);
+        // 拦截到了只读数据 不可添加修改
+        // proxyUser4.name = '===='
+        // console.log(proxyUser4.name = '====');
+        // 拦截到了读取 不能删除
+        // delete proxyUser4.name
+        // console.log(delete proxyUser4.name);
+        // 拦截到了读取 不可以添加 修改
+        // proxyUser4.wife.push("小姐姐")
+        // console.log(proxyUser4.wife.push("小姐姐"));
+        // proxyUser4.wife[0] = '大姐姐'
+        // console.log(proxyUser4.wife[0] = '大姐姐');
+        // 拦截到了读取 不能删除
+        // delete proxyUser4.wife[0]
+
+    let refUser1 = shallowRef({
+            name: "Tom",
+            wife: {
+                name: "大甜甜"
+            }
+        })
+        // console.log(refUser1.value);
+        // 劫持到修改
+        // refUser1.value.name = "=="
+        // console.log(refUser1.value.name);
+        // 劫持不到修改
+        // refUser1.value.wife.name = "=="
+        // console.log(refUser1.value.wife);
+    let refUser2 = ref({
+            name: "Tom",
+            wife: {
+                name: "大甜甜"
+            }
+        })
+        // console.log(refUser2.value);
+        // 劫持到修改
+        // refUser2.value = "=="
+        // 劫持到读取 劫持到修改
+        // refUser2.value.wife = "=="
+
+
+    console.log(isRef(ref({})));
+    console.log(isReactive(reactive({})));
+    console.log(isReadonly(readonly({})));
+    console.log(isPoxy(reactive({})));
+    console.log(isPoxy(readonly({})));
+</script>
+
+</html>

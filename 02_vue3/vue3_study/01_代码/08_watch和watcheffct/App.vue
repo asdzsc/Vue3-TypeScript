@@ -59,7 +59,6 @@ export default defineComponent({
       set(v: string) {
         console.log(v);
         const names = v.split("_");
-        console.log();
         user.firstName = names[0];
         user.lastName = names[1];
       },

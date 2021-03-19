@@ -23,6 +23,7 @@ export default defineComponent({
   setup() {
     // 通过ref设置数据
     const m1 = ref("abc");
+    // 通过reactive设置数据
     const m2 = reactive({
       name: "Tom",
       wife: {

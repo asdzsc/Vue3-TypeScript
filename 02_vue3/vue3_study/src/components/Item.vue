@@ -1,7 +1,7 @@
 <template>
   <li
     @mouseenter="handleMouseenter(true)"
-    @mouseleave="handleMouseenter(flase)"
+    @mouseleave="handleMouseenter(false)"
     :style="{ backgroundColor: bgColor, color: myColor }"
   >
     <label>

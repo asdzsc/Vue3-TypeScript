@@ -32,7 +32,6 @@ export default defineComponent({
   setup(props) {
     const count = computed(() => {
       // console.log(props.todos);
-
       // total 默认值0  计算结束后的返回值
       return props.todos.reduce(
         (total, todo) => total + (todo.isCheck ? 1 : 0), //0 传递给函数的初始值
